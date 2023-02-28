@@ -6,6 +6,7 @@ const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
 
 const Todo = require('./models/todo.js')
+const todo = require('./models/todo.js')
 
 const app = express()
 
@@ -37,13 +38,12 @@ app.get('/', (req, res) => {
     .catch(error => console.error(error))
 })
 
-app.get('/todo/new', (req, res) => {
+app.get('/todos/new', (req, res) => {
   res.render('new')
 })
 
 app.post('/todos', (req, res) => {
   const name = req.body.name
-
 
   //方法1
   return Todo.create({ name })
@@ -56,6 +56,14 @@ app.post('/todos', (req, res) => {
   return todo.save()
     .then(() => res.redirect('/'))
     .catch(error => console.error(error))*/
+})
+
+app.get('/todos/:id', (req, res) => {
+  const id = req.params.id
+  Todo.findById(id)
+    .lean()
+    .then(todo => res.render('detail', { todo }))
+    .catch(error => console.error(error))
 })
 
 app.listen(3000, () => {
