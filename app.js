@@ -6,7 +6,7 @@ const exphbs = require('express-handlebars')
 const bodyParser = require('body-parser')
 
 const Todo = require('./models/todo.js')
-const todo = require('./models/todo.js')
+// const todo = require('./models/todo.js')
 const { findById } = require('./models/todo.js')
 
 const app = express()
@@ -40,6 +40,8 @@ app.get('/', (req, res) => {
 })
 
 app.get('/todos/new', (req, res) => {
+  let number = Todo.count()
+  console.log(number)
   return res.render('new')
 })
 
@@ -76,11 +78,17 @@ app.get('/todos/:id/edit', (req, res) => {
 })
 
 app.post('/todos/:id/edit', (req, res) => {
-  const id = req.params.id
-  const name = req.body.name
-  return Todo.findById(id)
+
+  //新方法
+  //Todo.findByIdAndUpdate(req.params.id, req.body)
+
+
+  //舊方法 save()已經移除
+  const { name, isDone } = req.body
+  return Todo.findById(req.params.id)
     .then(todo => {
       todo.name = name
+      todo.isDone = isDone === "on"
       return todo.save()
     })
     .then(() => res.redirect('edit'))
