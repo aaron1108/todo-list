@@ -4,8 +4,6 @@ const router = express.Router()
 const Todo = require('../../models/todo')
 
 router.get('/new', (req, res) => {
-  let number = Todo.count()
-  console.log(number)
   return res.render('new')
 })
 
@@ -34,7 +32,6 @@ router.get('/:id/edit', (req, res) => {
 })
 
 router.put('/:id', (req, res) => {
-  console.log(req.params.id)
   //新方法
   Todo.findByIdAndUpdate(req.params.id, { name: req.body.name, isDone: req.body.isDone === "on" })
 
