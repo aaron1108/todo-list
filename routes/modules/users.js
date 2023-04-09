@@ -6,7 +6,7 @@ const User = require('../../models/user')
 
 router.get('/login', (req, res) => res.render('login'))
 
-router.post('/login', passport.authenticate('local', { successRedirect: '/', failureRedirect: 'login' }))
+router.post('/login', passport.authenticate('local', { successRedirect: '/', failureRedirect: '/user/login' }))
 
 router.get('/register', (req, res) => res.render('register'))
 
@@ -28,7 +28,7 @@ router.post('/register', (req, res) => {
 
 router.get('/logout', (req, res) => {
   req.logout()
-  res.redirect('login')
+  res.redirect('/user/login')
 })
 
 module.exports = router
