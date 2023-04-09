@@ -16,7 +16,7 @@ module.exports = (app) => {
         if (user.password !== password) return done(null, false, { message: 'Email or Password incorrect.' })
         return done(null, user)
       })
-      .catch(err => done(err, false))
+      .catch(err => done(err))
   }))
 
   //設定序列化/反序列化
