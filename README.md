@@ -1,5 +1,5 @@
 # TODO-LIST
-這是一個使用 Node.js + Express 打造的餐廳美食網站
+這是一個使用 Node.js + Express 打造的TODO-LIST網站
 
 ## Features
 -使用者可以在使用email註冊todo-list的帳號
