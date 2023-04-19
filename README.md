@@ -2,12 +2,12 @@
 這是一個使用 Node.js + Express 打造的TODO-LIST網站
 
 ## Features
--使用者可以在使用email註冊todo-list的帳號
--使用者可以使用facebook連動登入
--使用者可以新增自己的todo
--使用者可以查看自己的todo
--使用者可以編輯自己的todo
--使用者可以刪除自己的todo
+- 使用者可以在使用email註冊todo-list的帳號
+- 使用者可以使用facebook連動登入
+- 使用者可以新增自己的todo
+- 使用者可以查看自己的todo
+- 使用者可以編輯自己的todo
+- 使用者可以刪除自己的todo
 
 ## Installation and Execution
 開啟 terminal，並Clone 此專案至本機電腦
