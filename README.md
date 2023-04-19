@@ -1,7 +1,7 @@
-#TODO-LIST
+# TODO-LIST
 這是一個使用 Node.js + Express 打造的餐廳美食網站
 
-##Features
+## Features
 -使用者可以在使用email註冊todo-list的帳號
 -使用者可以使用facebook連動登入
 -使用者可以新增自己的todo
@@ -9,7 +9,7 @@
 -使用者可以編輯自己的todo
 -使用者可以刪除自己的todo
 
-##Installation and Execution
+## Installation and Execution
 開啟 terminal，並Clone 此專案至本機電腦
 進入存放此專案的資料夾
 安裝套件 (npm install)
